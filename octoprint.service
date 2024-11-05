@@ -5,10 +5,10 @@ Wants=network-online.target
 
 [Service]
 Environment="LC_ALL=C.UTF-8"
-Environment="LANG=C.UTF-8"
+Environment="PORT=5000"
 Type=simple
-User=mamex
-ExecStart=/home/mamex/oprint/venv/bin/octoprint
+User=pi
+ExecStart=/home/pi/oprint/venv/bin/octoprint serve --host=${HOST} --port=${PORT}
 
 [Install]
 WantedBy=multi-user.target
